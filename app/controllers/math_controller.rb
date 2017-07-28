@@ -1,4 +1,11 @@
 class MathController < ApplicationController
+    def dups
+        if request.post?
+            numbers = params[:numbers].split(',').map(&:to_i)
+            @counter = numbers.inject(Hash.new(0)){|h, n| h[n] += 1; h }
+        end
+    end
+    
     def get_ransum
         render 'ransum'
     end
