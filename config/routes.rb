@@ -9,4 +9,6 @@ Rails.application.routes.draw do
     post '/math/ransum', to: 'math#post_ransum'
     get '/math/dups', to: 'math#dups'
     post '/math/dups', to: 'math#dups'
+    get '/quote', to: 'stock#quote'
+    post '/quote', to: 'stock#quote'
 end

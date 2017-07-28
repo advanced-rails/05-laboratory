@@ -1,0 +1,9 @@
+<h1>Stock Quote</h1>
+
+<form method='post' action='/quote'>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <input type='text' name='symbol' />
+    <input type='submit' name='Go!' />
+</form>
+
+<%= number_to_currency @amount %>
