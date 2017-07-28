@@ -1,4 +1,16 @@
 class MathController < ApplicationController
+    def get_ransum
+        render 'ransum'
+    end
+    
+    def post_ransum
+        count = params[:count].to_i
+        start, stop = params[:range].split(',').map{|x| x.to_i}
+        @numbers = count.times.map{ rand(start..stop) }
+        @sum = @numbers.sum
+        render 'ransum'
+    end
+    
     def showadd
     end
     
